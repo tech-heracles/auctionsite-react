@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Container, Row, Col, Card, ListGroup, Form, Button, Alert } from 'react-bootstrap';
+import { Container, Row, Col, Form, Button } from 'react-bootstrap';
 import { useParams, useNavigate } from 'react-router-dom';
 import moment from 'moment';
 import AuctionService from '../../services/auction.service';
@@ -26,6 +26,8 @@ const AuctionDetails = () => {
       return;
     }
     
+    navigate();
+    currentUser();
     fetchAuction();
     fetchBalance();
   }, [id]);
