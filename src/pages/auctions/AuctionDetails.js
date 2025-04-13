@@ -4,6 +4,7 @@ import { useParams, useNavigate } from 'react-router-dom';
 import moment from 'moment';
 import AuctionService from '../../services/auction.service';
 import AuthService from '../../services/auth.service';
+import { BidData } from '../../models/BidData';
 import './AuctionDetails.css';
 
 const AuctionDetails = () => {
@@ -12,7 +13,7 @@ const AuctionDetails = () => {
   const [auction, setAuction] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
-  const [bidAmount, setBidAmount] = useState('');
+  const [bidData, setBidData] = useState(new BidData());
   const [bidError, setBidError] = useState('');
   const [bidSuccess, setBidSuccess] = useState('');
   const [balance, setBalance] = useState(0);
@@ -54,9 +55,10 @@ const AuctionDetails = () => {
     try {
       setLoading(true);
       const data = await AuctionService.getAuctionById(id);
-      console.log(data);
       setAuction(data);
-      setBidAmount((data.currentHighestBid + 1).toFixed(2));
+      
+      setBidData(BidData.createDefault(data.id, data.currentHighestBid));
+      
       setLoading(false);
     } catch (error) {
       setError('Failed to load auction details');
@@ -75,7 +77,7 @@ const AuctionDetails = () => {
   };
 
   const handleBidChange = (e) => {
-    setBidAmount(e.target.value);
+    setBidData(bidData.update('amount', e.target.value));
     setBidError('');
     setBidSuccess('');
   };
@@ -85,30 +87,18 @@ const AuctionDetails = () => {
     setBidError('');
     setBidSuccess('');
     
-    const bidValue = parseFloat(bidAmount);
+    const validationErrors = bidData.validate(auction.currentHighestBid, balance);
     
-    if (isNaN(bidValue) || bidValue <= 0) {
-      setBidError('Your offering must hold value, mortal');
-      return;
-    }
-    
-    if (bidValue <= auction.currentHighestBid) {
-      setBidError(`Your offering must exceed the current bid of ${auction.currentHighestBid.toFixed(2)} $`);
-      return;
-    }
-    
-    if (bidValue > balance) {
-      setBidError(`Your treasury holds only ${balance.toFixed(2)} $. You cannot offer what you do not possess.`);
+    if (Object.keys(validationErrors).length > 0) {
+      setBidError(validationErrors.amount || 'Invalid bid');
       return;
     }
     
     try {
-      await AuctionService.placeBid({
-        auctionId: auction.id,
-        amount: bidValue
-      });
+      const apiData = bidData.toApiFormat();
+      await AuctionService.placeBid(apiData);
       
-      setBidSuccess(`The gods smile upon your offering of ${bidValue.toFixed(2)} $!`);
+      setBidSuccess(`The gods smile upon your offering of ${parseFloat(bidData.amount).toFixed(2)} $!`);
       fetchAuction();
       fetchBalance();
     } catch (error) {
@@ -262,7 +252,7 @@ const AuctionDetails = () => {
                           type="number"
                           step="0.01"
                           min={auction.currentHighestBid + 0.01}
-                          value={bidAmount}
+                          value={bidData.amount}
                           onChange={handleBidChange}
                           required
                           className="bid-input"

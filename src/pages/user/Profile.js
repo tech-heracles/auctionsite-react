@@ -1,33 +1,68 @@
 import React, { useState, useEffect } from 'react';
 import { Container } from 'react-bootstrap';
 import AuctionService from '../../services/auction.service';
+import { AuctionListFilters } from '../../models/AuctionListFilters';
 import AuthService from '../../services/auth.service';
+import AddFundsButton from './AddFundsButton';
 import './Profile.css';
 
 const Profile = () => {
   const [user, setUser] = useState(null);
-  const [balance, setBalance] = useState(null);
+  const [balance, setBalance] = useState(0);
+  const [auctionsCreated, setAuctionsCreated] = useState(0);
+  const [auctionsWon, setAuctionsWon] = useState(0);
+  const [activeBids, setActiveBids] = useState(0);
+  const [treasuresCollected, setTreasuresCollected] = useState(0);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
+
+  const [filters, setFilters] = useState(new AuctionListFilters());
 
   useEffect(() => {
     const currentUser = AuthService.getCurrentUser();
     if (currentUser) {
       setUser(currentUser);
-      fetchBalance();
+      fetchUserData();
     }
   }, []);
 
-  const fetchBalance = async () => {
+  const fetchUserData = async () => {
     try {
-      const balance = await AuctionService.getUserBalance();
-      setBalance(balance);
+      setLoading(true);
+      
+      const [myAuctions, allAuctions, balanceData, myBids] = await Promise.all([
+        AuctionService.getMyAuctions(),
+        AuctionService.getActiveAuctions(filters),
+        AuctionService.getUserBalance(),
+        AuctionService.getMyBids()
+      ]);
+      
+      setBalance(balanceData);
+      
+      setAuctionsCreated(myAuctions.length || 0);
+      
+      const wonAuctions = myBids.filter(bid => 
+        bid.highestBidderUsername == (JSON.parse(localStorage.getItem("user")).username) && !bid.status
+      ).length || 0;
+      setAuctionsWon(wonAuctions);
+
+      const currentActiveBids = myBids.filter(bid => 
+        bid.status
+      ).length || 0;
+      setActiveBids(currentActiveBids);
+      
+      setTreasuresCollected(wonAuctions);
+      
       setLoading(false);
     } catch (error) {
-      setError('Failed to load your balance');
+      setError('Failed to load your heroic data');
       setLoading(false);
-      console.error('Error fetching balance:', error);
+      console.error('Error fetching user data:', error);
     }
+  };
+
+  const handleBalanceUpdated = (newBalance) => {
+    setBalance(newBalance);
   };
 
   if (loading) {
@@ -94,8 +129,13 @@ const Profile = () => {
               <div className="detail-item treasury">
                 <div className="detail-label">Treasury Balance:</div>
                 <div className="detail-value balance">
-                  {balance !== null ? balance.toFixed(2) : '...'} <span className="drachma">₯</span>
+                  {balance.toFixed(2)} <span className="drachma">₯</span>
                 </div>
+              </div>
+              
+              {/* Add Funds Button */}
+              <div className="detail-item">
+                <AddFundsButton onBalanceUpdated={handleBalanceUpdated} />
               </div>
             </div>
           </div>
@@ -109,25 +149,25 @@ const Profile = () => {
             <div className="stats-grid">
               <div className="stat-item">
                 <div className="stat-icon">🛒</div>
-                <div className="stat-value">0</div>
+                <div className="stat-value">{auctionsCreated}</div>
                 <div className="stat-label">Auctions Created</div>
               </div>
               
               <div className="stat-item">
                 <div className="stat-icon">🏆</div>
-                <div className="stat-value">0</div>
+                <div className="stat-value">{auctionsWon}</div>
                 <div className="stat-label">Auctions Won</div>
               </div>
               
               <div className="stat-item">
                 <div className="stat-icon">📊</div>
-                <div className="stat-value">0</div>
+                <div className="stat-value">{activeBids}</div>
                 <div className="stat-label">Active Bids</div>
               </div>
               
               <div className="stat-item">
                 <div className="stat-icon">⚱️</div>
-                <div className="stat-value">0</div>
+                <div className="stat-value">{treasuresCollected}</div>
                 <div className="stat-label">Treasures Collected</div>
               </div>
             </div>

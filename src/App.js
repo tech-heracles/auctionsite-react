@@ -9,19 +9,19 @@ import Header from './components/layout/Header';
 import Footer from './components/layout/Footer';
 import PageBackground from './components/layout/PageBackground';
 
-// Auth Components
-import Login from './components/auth/Login';
-import Register from './components/auth/Register';
+// Auth pages
+import Login from './pages/auth/Login';
+import Register from './pages/auth/Register';
 
 // Auction Components
-import AuctionList from './components/auctions/AuctionList';
-import AuctionDetails from './components/auctions/AuctionDetails';
-import AuctionForm from './components/auctions/AuctionForm';
-import MyAuctions from './components/auctions/MyAuctions';
-import MyBids from './components/auctions/MyBids';
+import AuctionList from './pages/auctions/AuctionList';
+import AuctionDetails from './pages/auctions/AuctionDetails';
+import AuctionForm from './pages/auctions/AuctionForm';
+import MyAuctions from './pages/auctions/MyAuctions';
+import MyBids from './pages/auctions/MyBids';
 
-// User Components
-import Profile from './components/user/Profile';
+// profile page
+import Profile from './pages/user/Profile';
 
 // Services
 import AuthService from './services/auth.service';

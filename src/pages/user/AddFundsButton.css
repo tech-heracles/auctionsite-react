@@ -1,0 +1,161 @@
+.add-funds-btn {
+    margin-top: 15px;
+    background-color: #8b5d33 !important;
+    border: 2px solid #d4af37 !important;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 8px 20px;
+  }
+  
+  .add-funds-btn:hover {
+    background-color: #966b3f !important;
+    box-shadow: 0 0 15px rgba(212, 175, 55, 0.5);
+  }
+  
+  .btn-icon {
+    font-size: 1.2em;
+  }
+  
+  .olympus-modal .modal-content {
+    background-color: #f5f2e8;
+    border: 3px solid #d4af37;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  }
+  
+  .olympus-modal .modal-title {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #8b5d33;
+  }
+  
+  .olympus-modal .modal-title h3 {
+    font-family: 'Cinzel', serif;
+    margin: 0 15px;
+    font-weight: bold;
+  }
+  
+  .meander-line.small {
+    height: 12px;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="40" height="12" viewBox="0 0 40 12"><path d="M0,0 L5,0 L5,5 L10,5 L10,0 L15,0 L15,5 L20,5 L20,0 L25,0 L25,5 L30,5 L30,0 L35,0 L35,5 L40,5 L40,12 L35,12 L35,7 L30,7 L30,12 L25,12 L25,7 L20,7 L20,12 L15,12 L15,7 L10,7 L10,12 L5,12 L5,7 L0,7 Z" fill="%23d4af37"/></svg>');
+    background-repeat: repeat-x;
+    flex-grow: 1;
+  }
+  
+  .prayer-instructions {
+    text-align: center;
+    font-style: italic;
+    margin-bottom: 20px;
+    color: #5a5a5a;
+  }
+  
+  .gods-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin-bottom: 20px;
+  }
+  
+  .god-option {
+    background-color: #f9f7f1;
+    border: 2px solid #cbb26a;
+    border-radius: 8px;
+    padding: 15px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .god-option:hover {
+    border-color: #8b5d33;
+    transform: translateY(-2px);
+  }
+  
+  .god-option.selected {
+    background-color: #f0e6cc;
+    border-color: #8b5d33;
+    box-shadow: 0 0 10px rgba(139, 93, 51, 0.3);
+  }
+  
+  .god-icon {
+    font-size: 2em;
+    margin-bottom: 5px;
+  }
+  
+  .god-name {
+    font-family: 'Cinzel', serif;
+    font-weight: bold;
+    color: #8b5d33;
+    margin-bottom: 5px;
+  }
+  
+  .god-offering {
+    font-weight: bold;
+    font-size: 1.1em;
+    margin-bottom: 5px;
+  }
+  
+  .god-description {
+    font-size: 0.9em;
+    font-style: italic;
+    color: #666;
+  }
+  
+  .prayer-error, .prayer-success {
+    margin-top: 15px;
+    padding: 10px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .prayer-error {
+    background-color: rgba(220, 53, 69, 0.1);
+    color: #dc3545;
+    border-left: 4px solid #dc3545;
+  }
+  
+  .prayer-success {
+    background-color: rgba(40, 167, 69, 0.1);
+    color: #28a745;
+    border-left: 4px solid #28a745;
+  }
+  
+  .error-icon, .success-icon {
+    font-size: 1.2em;
+  }
+  
+  .olympus-button {
+    font-family: 'Cinzel', serif;
+    font-weight: bold;
+    letter-spacing: 1px;
+    padding: 8px 20px;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+  }
+  
+  .olympus-button.primary {
+    background-color: #8b5d33;
+    border: 2px solid #d4af37;
+    color: white;
+  }
+  
+  .olympus-button.primary:hover:not(:disabled) {
+    background-color: #966b3f;
+    box-shadow: 0 0 15px rgba(212, 175, 55, 0.5);
+  }
+  
+  .olympus-button.secondary {
+    background-color: #f5f2e8;
+    border: 2px solid #8b5d33;
+    color: #8b5d33;
+  }
+  
+  .olympus-button.secondary:hover {
+    background-color: #e9e2d0;
+  }

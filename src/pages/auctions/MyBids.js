@@ -143,7 +143,7 @@ const MyBids = () => {
                   </div>
                   <div className="parchment-column status">
                     <span className={`item-status ${!auction.status ? 'ended' : 'active'}`}>
-                      {auction.status ? 'Concluded' : 'Active Quest'}
+                      {!auction.status ? 'Concluded' : 'Active Quest'}
                     </span>
                   </div>
                   <div className="parchment-column date">

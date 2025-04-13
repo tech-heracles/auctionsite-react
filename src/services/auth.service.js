@@ -12,7 +12,6 @@ const register = async (userData) => {
       localStorage.setItem('token', response.data.token);
       
       const decoded = jwtDecode(response.data.token);
-      console.log(decoded);
       const user = {
         id: decoded.id || decoded.nameid,
         username: decoded.unique_name,

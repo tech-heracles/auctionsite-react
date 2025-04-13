@@ -1,12 +1,13 @@
 import api from './api';
 
-const getActiveAuctions = async () => {
-  const response = await api.get('/auction');
+const getActiveAuctions = async (auctionFilters = null) => {
+  const response = await api.post('/auction/active', auctionFilters);
   return response.data;
 };
 
 const getAuctionById = async (id) => {
   const response = await api.get(`/auction/${id}`);
+  console.log(response.data);
   return response.data;
 };
 
@@ -22,13 +23,11 @@ const placeBid = async (bidData) => {
 
 const getMyAuctions = async () => {
   const response = await api.get('/auction/my-auctions');
-  console.log(response.data);
   return response.data;
 };
 
 const getMyBids = async () => {
   const response = await api.get('/auction/my-bids');
-  console.log(response.data);
   return response.data;
 };
 
@@ -37,6 +36,11 @@ const getUserBalance = async () => {
   return response.data.balance;
 };
 
+const updateBalance = async (amount) => {
+    const response = await api.post(`/user/updateBalance?amount=${Number(amount)}`);
+    return response.data.balance || 0;
+}
+
 export default {
   getActiveAuctions,
   getAuctionById,
@@ -44,5 +48,6 @@ export default {
   placeBid,
   getMyAuctions,
   getMyBids,
-  getUserBalance
+  getUserBalance,
+  updateBalance
 };

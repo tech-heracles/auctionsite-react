@@ -400,3 +400,64 @@
     font-size: 0.9rem;
   }
 }
+
+.filter-section {
+  background-color: rgba(255, 255, 224, 0.8);
+  border: 1px solid #d4af37;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 30px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.olympus-label {
+  font-family: 'Cinzel', serif;
+  color: #8b4513;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.olympus-input {
+  border: 1px solid #d4af37;
+  background-color: rgba(255, 255, 255, 0.9);
+  color: #8b4513;
+  font-family: 'Lato', sans-serif;
+}
+
+.olympus-input-icon {
+  background-color: #d4af37;
+  border: 1px solid #d4af37;
+  color: #fff;
+}
+
+.olympus-filter-button {
+  background-color: #8b4513;
+  border: 1px solid #8b4513;
+  color: #fff;
+  font-family: 'Cinzel', serif;
+  font-weight: bold;
+  padding: 8px 20px;
+  transition: all 0.3s ease;
+}
+
+.olympus-filter-button:hover {
+  background-color: #a0522d;
+  border-color: #a0522d;
+  transform: translateY(-2px);
+}
+
+.olympus-reset-button {
+  background-color: #6b5b95;
+  border: 1px solid #6b5b95;
+  color: #fff;
+  font-family: 'Cinzel', serif;
+  font-weight: bold;
+  padding: 8px 20px;
+  transition: all 0.3s ease;
+}
+
+.olympus-reset-button:hover {
+  background-color: #8a7bb8;
+  border-color: #8a7bb8;
+  transform: translateY(-2px);
+}
