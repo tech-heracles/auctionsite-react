@@ -25,9 +25,7 @@ const AuctionDetails = () => {
       navigate('/login');
       return;
     }
-    
-    navigate();
-    currentUser();
+
     fetchAuction();
     fetchBalance();
   }, [id]);
