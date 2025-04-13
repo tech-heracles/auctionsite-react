@@ -1,0 +1,235 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Philosopher:wght@400;700&display=swap');
+
+.olympus-form-container {
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Header styling with Greek meander pattern */
+.olympus-form-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+.olympus-title {
+  font-family: 'Cinzel', serif;
+  font-weight: 700;
+  font-size: 1.8rem;
+  color: #1a3a5f;
+  text-align: center;
+  padding: 0 1.5rem;
+}
+
+.meander-line {
+  height: 5px;
+  flex-grow: 1;
+  max-width: 150px;
+  background-image: url('https://i.imgur.com/HAtLYft.png');
+  background-repeat: repeat-x;
+  background-size: auto 100%;
+}
+
+/* Scroll styling to make the form look like an ancient scroll */
+.olympus-scroll {
+  position: relative;
+  margin-bottom: 3rem;
+  background: linear-gradient(to bottom, rgba(245, 240, 227, 0.8), rgba(255, 255, 255, 0.9));
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.scroll-top {
+  height: 20px;
+  background-image: url('https://i.imgur.com/Z4W8YkY.jpg');
+  background-size: cover;
+  background-position: center top;
+  border-radius: 8px 8px 0 0;
+  opacity: 0.5;
+}
+
+.scroll-content {
+  padding: 2rem 1.5rem;
+}
+
+.scroll-bottom {
+  height: 20px;
+  background-image: url('https://i.imgur.com/Z4W8YkY.jpg');
+  background-size: cover;
+  background-position: center bottom;
+  border-radius: 0 0 8px 8px;
+  opacity: 0.5;
+}
+
+/* Form styling */
+.olympus-form {
+  position: relative;
+}
+
+.olympus-form::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url('https://i.imgur.com/JTmeBpp.jpg');
+  background-size: 400px;
+  opacity: 0.05;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.olympus-form-group {
+  margin-bottom: 1.5rem;
+}
+
+/* Label styling */
+.olympus-label {
+  display: flex;
+  align-items: center;
+  font-family: 'Cinzel', serif;
+  font-weight: 700;
+  color: #1a3a5f;
+  margin-bottom: 0.5rem;
+}
+
+.label-icon {
+  font-size: 1.2rem;
+  margin-right: 0.5rem;
+}
+
+/* Input styling */
+.olympus-input,
+.olympus-textarea {
+  background-color: rgba(255, 255, 255, 0.7);
+  border: 1px solid #d4b662;
+  border-radius: 5px;
+  padding: 0.75rem;
+  font-family: 'Philosopher', sans-serif;
+  transition: all 0.3s;
+}
+
+.olympus-input:focus,
+.olympus-textarea:focus {
+  background-color: rgba(255, 255, 255, 0.9);
+  border-color: #1a3a5f;
+  box-shadow: 0 0 0 0.2rem rgba(26, 58, 95, 0.25);
+}
+
+.olympus-input.is-invalid,
+.olympus-textarea.is-invalid {
+  border-color: #8b0000;
+  background-image: none;
+}
+
+/* Error message styling */
+.olympus-feedback {
+  font-family: 'Philosopher', sans-serif;
+  color: #8b0000;
+  font-style: italic;
+}
+
+/* Submit button styling */
+.olympus-submit-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.olympus-submit-button {
+  background: linear-gradient(to right, #1a3a5f, #2c5282);
+  border: none;
+  color: #f5d782;
+  font-family: 'Cinzel', serif;
+  font-weight: 700;
+  padding: 0.75rem 2rem;
+  border-radius: 5px;
+  transition: all 0.3s;
+  position: relative;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.olympus-submit-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url('https://i.imgur.com/HAtLYft.png');
+  background-size: auto 100%;
+  background-repeat: repeat-x;
+  background-position: center;
+  opacity: 0.2;
+  border-radius: 5px;
+}
+
+.olympus-submit-button:hover {
+  background: linear-gradient(to right, #25507f, #3972b8);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+  color: #fff;
+}
+
+.olympus-submit-button:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.olympus-submit-button:disabled {
+  background: #93a5bc;
+  color: #e5e5e5;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+/* Error alert styling */
+.olympus-error-alert {
+  background-color: rgba(139, 0, 0, 0.1);
+  border-color: #8b0000;
+  color: #8b0000;
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  font-family: 'Philosopher', sans-serif;
+}
+
+.error-icon {
+  font-size: 1.5rem;
+  margin-right: 0.75rem;
+  animation: pulse 1s infinite alternate;
+}
+
+.error-message {
+  font-style: italic;
+}
+
+@keyframes pulse {
+  from {
+    opacity: 0.5;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 576px) {
+  .olympus-title {
+    font-size: 1.4rem;
+  }
+  
+  .scroll-content {
+    padding: 1.5rem 1rem;
+  }
+  
+  .olympus-label {
+    font-size: 0.9rem;
+  }
+}

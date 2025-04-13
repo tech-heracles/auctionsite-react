@@ -1,0 +1,402 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Philosopher:wght@400;700&display=swap');
+
+/* Header styling */
+.my-treasures-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.olympus-title {
+  font-family: 'Cinzel', serif;
+  font-weight: 700;
+  font-size: 2rem;
+  color: #1a3a5f;
+  text-align: center;
+  padding: 0 1.5rem;
+}
+
+.meander-line {
+  height: 5px;
+  flex-grow: 1;
+  max-width: 200px;
+  background-image: url('https://content.artofmanliness.com/uploads/2012/08/gods.jpg');
+  background-repeat: repeat-x;
+  background-size: auto 100%;
+}
+
+/* Empty state styling */
+.empty-treasury {
+  text-align: center;
+  padding: 3rem 1rem;
+  background: rgba(245, 240, 227, 0.5);
+  border-radius: 8px;
+  border: 1px dashed #d4b662;
+}
+
+.empty-icon {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+}
+
+.empty-text {
+  font-family: 'Cinzel', serif;
+  font-size: 1.5rem;
+  color: #1a3a5f;
+  margin-bottom: 0.5rem;
+}
+
+.empty-subtext {
+  font-family: 'Philosopher', sans-serif;
+  color: #666;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.create-link {
+  display: inline-block;
+  margin-left: 0.5rem;
+  color: #1a3a5f;
+  font-weight: 700;
+  text-decoration: none;
+  border-bottom: 2px solid #d4b662;
+  transition: all 0.3s;
+}
+
+.create-link:hover {
+  color: #d4b662;
+}
+
+/* Table/Scrolls styling */
+.scrolls-container {
+  background: linear-gradient(to bottom, #f5f0e3, #ffffff);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e0d7c1;
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+.scrolls-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url('https://content.artofmanliness.com/uploads/2012/08/gods.jpg');
+  background-size: 400px;
+  opacity: 0.05;
+  pointer-events: none;
+}
+
+.scroll-header {
+  display: flex;
+  background: linear-gradient(to right, rgba(26, 58, 95, 0.9), rgba(26, 58, 95, 1));
+  color: #f5d782;
+  padding: 1rem 0.5rem;
+  font-family: 'Cinzel', serif;
+  font-weight: 700;
+  position: relative;
+}
+
+.scroll-header::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background-image: url('https://i.imgur.com/HAtLYft.png');
+  background-repeat: repeat-x;
+  background-size: auto 100%;
+  opacity: 0.5;
+}
+
+.column-title {
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.scrolls-body {
+  max-height: 600px;
+  overflow-y: auto;
+}
+
+.scroll-row {
+  display: flex;
+  padding: 1rem 0.5rem;
+  border-bottom: 1px solid rgba(26, 58, 95, 0.1);
+  transition: all 0.3s;
+  cursor: pointer;
+  position: relative;
+}
+
+.scroll-row:hover {
+  background-color: rgba(245, 215, 130, 0.1);
+  transform: translateY(-2px);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.scroll-row.ended {
+  background-color: rgba(200, 200, 200, 0.1);
+}
+
+.scroll-row.active::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background-color: #28a745;
+}
+
+.scroll-row.ended::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background-color: #6c757d;
+}
+
+.scroll-column {
+  padding: 0 0.5rem;
+  display: flex;
+  align-items: center;
+}
+
+.scroll-column.icon {
+  width: 60px;
+  justify-content: center;
+}
+
+.scroll-column.title {
+  flex: 2;
+  min-width: 150px;
+}
+
+.scroll-column.price {
+  width: 120px;
+}
+
+.scroll-column.date {
+  width: 180px;
+}
+
+.scroll-column.status {
+  width: 120px;
+}
+
+.scroll-column.bidder {
+  flex: 1;
+  min-width: 120px;
+}
+
+.item-icon {
+  font-size: 1.5rem;
+}
+
+.item-title {
+  font-family: 'Cinzel', serif;
+  font-weight: 700;
+  color: #1a3a5f;
+}
+
+.item-price {
+  font-family: 'Philosopher', sans-serif;
+  font-weight: 700;
+  color: #1a3a5f;
+}
+
+.item-price.current {
+  color: #8b0000;
+}
+
+.drachma {
+  font-size: 0.8rem;
+  opacity: 0.7;
+}
+
+.item-date {
+  font-family: 'Philosopher', sans-serif;
+  color: #555;
+  font-size: 0.9rem;
+}
+
+.item-status {
+  font-family: 'Cinzel', serif;
+  font-size: 0.85rem;
+  padding: 0.3rem 0.6rem;
+  border-radius: 4px;
+  color: white;
+  letter-spacing: 0.5px;
+}
+
+.item-status.active {
+  background-color: #28a745;
+}
+
+.item-status.ended {
+  background-color: #6c757d;
+}
+
+.item-bidder {
+  font-family: 'Philosopher', sans-serif;
+  color: #1a3a5f;
+  font-size: 0.9rem;
+}
+
+/* Create auction button */
+.create-auction-container {
+  display: flex;
+  justify-content: center;
+  margin: 2rem 0;
+}
+
+.olympus-create-button {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  background: linear-gradient(to right, #1a3a5f, #2c5282);
+  color: #f5d782;
+  font-family: 'Cinzel', serif;
+  font-weight: 700;
+  padding: 0.75rem 2rem;
+  border-radius: 4px;
+  transition: all 0.3s;
+  text-decoration: none;
+  position: relative;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.olympus-create-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url('https://i.imgur.com/HAtLYft.png');
+  background-size: auto 100%;
+  background-repeat: repeat-x;
+  background-position: center;
+  opacity: 0.2;
+  border-radius: 4px;
+}
+
+.olympus-create-button:hover {
+  background: linear-gradient(to right, #25507f, #3972b8);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+  color: #fff;
+}
+
+.button-icon {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+/* Loading state styling */
+.olympus-loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem;
+  text-align: center;
+}
+
+.loading-column {
+  width: 40px;
+  height: 100px;
+  background-image: url('https://i.imgur.com/xNWldYu.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  animation: pulse 1.5s infinite alternate;
+  margin-bottom: 1rem;
+}
+
+@keyframes pulse {
+  from {
+    opacity: 0.6;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+}
+
+.loading-text {
+  font-family: 'Cinzel', serif;
+  font-size: 1.2rem;
+  color: #1a3a5f;
+  max-width: 250px;
+}
+
+/* Error state styling */
+.olympus-error {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem;
+  text-align: center;
+}
+
+.error-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  animation: shake 0.5s infinite;
+}
+
+@keyframes shake {
+  0% { transform: rotate(0deg); }
+  25% { transform: rotate(5deg); }
+  50% { transform: rotate(0deg); }
+  75% { transform: rotate(-5deg); }
+  100% { transform: rotate(0deg); }
+}
+
+.error-text {
+  font-family: 'Cinzel', serif;
+  font-size: 1.2rem;
+  color: #8b0000;
+  max-width: 300px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+  .scroll-column.date, 
+  .scroll-column.bidder {
+    display: none;
+  }
+  
+  .scroll-header .scroll-column.date .column-title,
+  .scroll-header .scroll-column.bidder .column-title {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .scroll-column.price:nth-child(3),
+  .scroll-column.status {
+    display: none;
+  }
+  
+  .scroll-header .scroll-column.price:nth-child(3) .column-title,
+  .scroll-header .scroll-column.status .column-title {
+    display: none;
+  }
+  
+  .item-title {
+    font-size: 0.9rem;
+  }
+}

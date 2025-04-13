@@ -1,0 +1,508 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Philosopher:wght@400;700&display=swap');
+
+/* Header styling */
+.treasure-detail-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.olympus-title {
+  font-family: 'Cinzel', serif;
+  font-weight: 700;
+  font-size: 2rem;
+  color: #1a3a5f;
+  text-align: center;
+  padding: 0 1.5rem;
+}
+
+.meander-line {
+  height: 5px;
+  flex-grow: 1;
+  max-width: 200px;
+  background-image: url('https://i.imgur.com/HAtLYft.png');
+  background-repeat: repeat-x;
+  background-size: auto 100%;
+}
+
+/* Main treasure card styling */
+.treasure-main-card {
+  background: linear-gradient(to bottom, #f5f0e3, #ffffff);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  margin-bottom: 2rem;
+  border: 1px solid #e0d7c1;
+}
+
+.treasure-header {
+  background: linear-gradient(to right, rgba(26, 58, 95, 0.9), rgba(26, 58, 95, 1));
+  padding: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  position: relative;
+}
+
+.treasure-header::before,
+.treasure-header::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 20px;
+  background-image: url('https://i.imgur.com/xNWldYu.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  opacity: 0.3;
+}
+
+.treasure-header::before {
+  left: 0;
+}
+
+.treasure-header::after {
+  right: 0;
+  transform: scaleX(-1);
+}
+
+.treasure-icon {
+  font-size: 2.5rem;
+  background-color: rgba(245, 215, 130, 0.2);
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid rgba(245, 215, 130, 0.5);
+}
+
+.treasure-title {
+  font-family: 'Cinzel', serif;
+  font-weight: 700;
+  color: #f5d782;
+  font-size: 1.8rem;
+  margin: 0;
+  flex-grow: 1;
+}
+
+.treasure-body {
+  padding: 2rem;
+}
+
+.treasure-description {
+  font-family: 'Philosopher', sans-serif;
+  font-size: 1.1rem;
+  color: #333;
+  line-height: 1.6;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px dashed rgba(26, 58, 95, 0.2);
+  margin-bottom: 1.5rem;
+}
+
+/* Details section styling */
+.treasure-details-section {
+  margin-bottom: 2rem;
+}
+
+.details-title,
+.bid-title,
+.bid-history-title {
+  font-family: 'Cinzel', serif;
+  color: #1a3a5f;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding-bottom: 0.5rem;
+  margin-bottom: 1rem;
+  position: relative;
+}
+
+.details-title::after,
+.bid-title::after,
+.bid-history-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-image: url('https://i.imgur.com/HAtLYft.png');
+  background-repeat: repeat-x;
+  background-size: auto 100%;
+}
+
+.details-icon,
+.bid-icon,
+.history-icon {
+  font-size: 1.3rem;
+}
+
+.details-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1rem;
+}
+
+.detail-item {
+  padding: 0.75rem;
+  background-color: rgba(245, 240, 227, 0.5);
+  border-radius: 4px;
+  border: 1px solid #e0d7c1;
+}
+
+.detail-label {
+  font-family: 'Cinzel', serif;
+  font-size: 0.9rem;
+  color: #555;
+  margin-bottom: 0.25rem;
+}
+
+.detail-value {
+  font-family: 'Philosopher', sans-serif;
+  font-weight: 700;
+  color: #1a3a5f;
+}
+
+.detail-value.highlight {
+  color: #8b0000;
+  font-size: 1.1rem;
+}
+
+.detail-value.status {
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  display: inline-block;
+  color: white;
+}
+
+.detail-value.status.active {
+  background-color: #28a745;
+}
+
+.detail-value.status.ended {
+  background-color: #dc3545;
+}
+
+.time-remaining {
+  grid-column: 1 / -1;
+  background-color: rgba(245, 215, 130, 0.2);
+  border-color: #f5d782;
+}
+
+.detail-value.countdown {
+  font-family: 'Cinzel', serif;
+  font-size: 1.2rem;
+  color: #8b0000;
+  text-align: center;
+  letter-spacing: 1px;
+}
+
+/* Bid section styling */
+.bid-section {
+  background-color: rgba(26, 58, 95, 0.05);
+  padding: 1.5rem;
+  border-radius: 8px;
+  border: 1px dashed rgba(26, 58, 95, 0.2);
+}
+
+.olympus-alert {
+  padding: 1rem;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.olympus-alert.error {
+  background-color: rgba(139, 0, 0, 0.1);
+  border-left: 4px solid #8b0000;
+  color: #8b0000;
+}
+
+.olympus-alert.success {
+  background-color: rgba(40, 167, 69, 0.1);
+  border-left: 4px solid #28a745;
+  color: #28a745;
+}
+
+.alert-icon {
+  font-size: 1.5rem;
+}
+
+.alert-text {
+  font-family: 'Philosopher', sans-serif;
+  flex-grow: 1;
+}
+
+.olympus-bid-form {
+  margin-top: 1.5rem;
+}
+
+.bid-form-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.bid-form-label {
+  font-family: 'Cinzel', serif;
+  color: #1a3a5f;
+  font-weight: 700;
+}
+
+.bid-input {
+  font-family: 'Philosopher', sans-serif;
+  padding: 0.75rem;
+  border: 1px solid #d4b662;
+  border-radius: 4px;
+  background-color: white;
+}
+
+.bid-input:focus {
+  border-color: #1a3a5f;
+  box-shadow: 0 0 0 0.2rem rgba(26, 58, 95, 0.25);
+}
+
+.treasury-balance {
+  display: block;
+  margin-top: 0.5rem;
+  font-family: 'Philosopher', sans-serif;
+  color: #555;
+}
+
+.balance-amount {
+  font-weight: 700;
+  color: #1a3a5f;
+}
+
+.olympus-bid-button {
+  background: linear-gradient(to right, #d4b662, #f5d782);
+  border: none;
+  color: #1a3a5f;
+  font-family: 'Cinzel', serif;
+  font-weight: 700;
+  padding: 0.75rem 1.5rem;
+  border-radius: 4px;
+  transition: all 0.3s;
+  width: 100%;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.olympus-bid-button:hover {
+  background: linear-gradient(to right, #c9a43e, #e2c75f);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+  color: #1a3a5f;
+}
+
+.olympus-bid-button:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Bid history card styling */
+.bid-history-card {
+  background: linear-gradient(to bottom, #f5f0e3, #ffffff);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e0d7c1;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.bid-history-header {
+  background: linear-gradient(to right, rgba(26, 58, 95, 0.9), rgba(26, 58, 95, 1));
+  padding: 1rem 1.5rem;
+}
+
+.bid-history-title {
+  color: #f5d782;
+  margin: 0;
+  font-size: 1.3rem;
+}
+
+.bid-history-title::after {
+  display: none;
+}
+
+.bid-history-body {
+  padding: 1.5rem;
+  overflow-y: auto;
+  flex-grow: 1;
+}
+
+.bid-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.bid-item {
+  padding: 1rem;
+  background-color: rgba(245, 240, 227, 0.5);
+  border-radius: 4px;
+  border: 1px solid #e0d7c1;
+  transition: all 0.3s;
+}
+
+.bid-item:hover {
+  background-color: rgba(245, 215, 130, 0.1);
+  border-color: #d4b662;
+  transform: translateY(-2px);
+}
+
+.bid-amount {
+  font-family: 'Cinzel', serif;
+  font-weight: 700;
+  color: #8b0000;
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+
+.bid-info {
+  display: flex;
+  justify-content: space-between;
+  font-family: 'Philosopher', sans-serif;
+  font-size: 0.9rem;
+}
+
+.bidder-name {
+  color: #1a3a5f;
+  font-weight: 700;
+}
+
+.bid-time {
+  color: #777;
+}
+
+/* No bids state */
+.no-bids {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2rem 1rem;
+  height: 100%;
+}
+
+.empty-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  opacity: 0.7;
+}
+
+.empty-text {
+  font-family: 'Cinzel', serif;
+  font-size: 1.2rem;
+  color: #1a3a5f;
+  margin-bottom: 0.5rem;
+}
+
+.empty-subtext {
+  font-family: 'Philosopher', sans-serif;
+  color: #777;
+}
+
+/* Loading state styling */
+.olympus-loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem;
+  text-align: center;
+}
+
+.loading-column {
+  width: 40px;
+  height: 100px;
+  background-image: url('https://i.imgur.com/xNWldYu.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  animation: pulse 1.5s infinite alternate;
+  margin-bottom: 1rem;
+}
+
+@keyframes pulse {
+  from {
+    opacity: 0.6;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+}
+
+.loading-text {
+  font-family: 'Cinzel', serif;
+  font-size: 1.2rem;
+  color: #1a3a5f;
+  max-width: 250px;
+}
+
+/* Error state styling */
+.olympus-error {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem;
+  text-align: center;
+}
+
+.error-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  animation: shake 0.5s infinite;
+}
+
+@keyframes shake {
+  0% { transform: rotate(0deg); }
+  25% { transform: rotate(5deg); }
+  50% { transform: rotate(0deg); }
+  75% { transform: rotate(-5deg); }
+  100% { transform: rotate(0deg); }
+}
+
+.error-text {
+  font-family: 'Cinzel', serif;
+  font-size: 1.2rem;
+  color: #8b0000;
+  max-width: 300px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+  .details-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .details-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .treasure-header {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .treasure-title {
+    margin-top: 1rem;
+  }
+  
+  .bid-form-content {
+    flex-direction: column;
+  }
+}

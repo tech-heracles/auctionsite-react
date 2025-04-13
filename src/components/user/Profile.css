@@ -1,0 +1,343 @@
+/* src/components/profile/Profile.css */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Philosopher:wght@400;700&display=swap');
+
+.hero-profile-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.olympus-title {
+  font-family: 'Cinzel', serif;
+  font-weight: 700;
+  font-size: 2rem;
+  color: #1a3a5f;
+  text-align: center;
+  padding: 0 1.5rem;
+}
+
+.meander-line {
+  height: 5px;
+  flex-grow: 1;
+  max-width: 200px;
+  background-image: url('https://sce.cornell.edu/img/content/3537-hero-1.jpg');
+  background-repeat: repeat-x;
+  background-size: auto 100%;
+}
+
+/* Hero profile layout */
+.hero-profile-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+@media (min-width: 992px) {
+  .hero-profile-container {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+  
+  .profile-hero-image {
+    width: 30%;
+  }
+  
+  .hero-details-container {
+    width: 70%;
+  }
+}
+
+/* Hero image styling */
+.profile-hero-image {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  background: linear-gradient(to bottom, #f5f0e3, #fffdf7);
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e0d7c1;
+}
+
+.profile-hero-image::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url('https://sce.cornell.edu/img/content/3537-hero-1.jpg');
+  background-size: 400px;
+  opacity: 0.05;
+  pointer-events: none;
+  border-radius: 8px;
+}
+
+.hero-laurel {
+  position: absolute;
+  width: 80%;
+  height: 80%;
+  background-image: url('https://sce.cornell.edu/img/content/3537-hero-1.jpg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0.3;
+}
+
+.hero-icon {
+  width: 120px;
+  height: 120px;
+  background: linear-gradient(to right, #1a3a5f, #2c5282);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #f5d782;
+  font-family: 'Cinzel', serif;
+  font-size: 3rem;
+  font-weight: 700;
+  border: 4px solid #d4b662;
+  box-shadow: 0 0 0 4px rgba(26, 58, 95, 0.3);
+  position: relative;
+  z-index: 1;
+}
+
+/* Details container */
+.hero-details-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/* Details card styling */
+.hero-details-card {
+  background: linear-gradient(to bottom, #f5f0e3, #fffdf7);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e0d7c1;
+}
+
+.hero-details-card .card-header {
+  background: linear-gradient(to right, rgba(26, 58, 95, 0.9), rgba(26, 58, 95, 1));
+  padding: 1rem 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.hero-details-card .header-icon {
+  font-size: 1.5rem;
+}
+
+.hero-details-card .header-title {
+  font-family: 'Cinzel', serif;
+  font-weight: 700;
+  font-size: 1.3rem;
+  color: #f5d782;
+  margin: 0;
+}
+
+.hero-details-card .card-body {
+  padding: 1.5rem;
+}
+
+.detail-item {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1.25rem;
+  padding-bottom: 1.25rem;
+  border-bottom: 1px dashed rgba(26, 58, 95, 0.2);
+}
+
+@media (min-width: 768px) {
+  .detail-item {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+.detail-item:last-child {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+.detail-label {
+  font-family: 'Cinzel', serif;
+  font-weight: 700;
+  color: #1a3a5f;
+  margin-bottom: 0.5rem;
+}
+
+@media (min-width: 768px) {
+  .detail-label {
+    margin-bottom: 0;
+  }
+}
+
+.detail-value {
+  font-family: 'Philosopher', sans-serif;
+  font-size: 1.1rem;
+  color: #333;
+}
+
+.detail-value.email {
+  font-style: italic;
+  color: #555;
+}
+
+.detail-item.treasury {
+  background-color: rgba(245, 215, 130, 0.1);
+  padding: 1rem;
+  border-radius: 4px;
+  margin-top: 0.5rem;
+}
+
+.detail-value.balance {
+  font-weight: 700;
+  color: #8b0000;
+  font-size: 1.3rem;
+}
+
+.drachma {
+  font-size: 0.9rem;
+  opacity: 0.7;
+}
+
+/* Stats card styling */
+.hero-stats-card {
+  background: linear-gradient(to bottom, #f5f0e3, #fffdf7);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e0d7c1;
+}
+
+.hero-stats-card .card-header {
+  background: linear-gradient(to right, rgba(139, 0, 0, 0.8), rgba(139, 0, 0, 0.9));
+  padding: 1rem 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  padding: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .stats-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+  background-color: rgba(26, 58, 95, 0.05);
+  border-radius: 8px;
+  transition: all 0.3s;
+}
+
+.stat-item:hover {
+  background-color: rgba(26, 58, 95, 0.1);
+  transform: translateY(-5px);
+}
+
+.stat-icon {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.stat-value {
+  font-family: 'Cinzel', serif;
+  font-weight: 700;
+  font-size: 1.8rem;
+  color: #1a3a5f;
+}
+
+.stat-label {
+  font-family: 'Philosopher', sans-serif;
+  color: #555;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+/* Loading state styling */
+.olympus-loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem;
+  text-align: center;
+}
+
+.loading-column {
+  width: 40px;
+  height: 100px;
+  background-image: url('https://i.imgur.com/xNWldYu.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  animation: pulse 1.5s infinite alternate;
+  margin-bottom: 1rem;
+}
+
+@keyframes pulse {
+  from {
+    opacity: 0.6;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+}
+
+.loading-text {
+  font-family: 'Cinzel', serif;
+  font-size: 1.2rem;
+  color: #1a3a5f;
+  max-width: 250px;
+}
+
+/* Error state styling */
+.olympus-error {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem;
+  text-align: center;
+}
+
+.error-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  animation: shake 0.5s infinite;
+}
+
+@keyframes shake {
+  0% { transform: rotate(0deg); }
+  25% { transform: rotate(5deg); }
+  50% { transform: rotate(0deg); }
+  75% { transform: rotate(-5deg); }
+  100% { transform: rotate(0deg); }
+}
+
+.error-text {
+  font-family: 'Cinzel', serif;
+  font-size: 1.2rem;
+  color: #8b0000;
+  max-width: 300px;
+}

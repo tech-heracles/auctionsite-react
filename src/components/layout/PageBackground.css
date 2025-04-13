@@ -1,0 +1,56 @@
+.greek-background {
+    min-height: 100vh;
+    position: relative;
+    background: linear-gradient(to bottom, #f5f0e3, #ffffff);
+    background-attachment: fixed;
+  }
+  
+  /* Subtle marble texture overlay */
+  .greek-background::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('https://mythologyvault.com/wp-content/uploads/2024/01/hercules_greek_mythology_strongest_hero.jpg');
+    background-size: 500px;
+    opacity: 0.05;
+    pointer-events: none;
+  }
+  
+  /* Decorative columns on sides */
+  .bg-column {
+    position: fixed;
+    top: 0;
+    height: 100vh;
+    width: 50px;
+    background-repeat: repeat-y;
+    background-size: contain;
+    opacity: 0.07;
+    pointer-events: none;
+    display: none; /* Hidden on small screens */
+  }
+  
+  .bg-column-left {
+    left: 0;
+    background-image: url('https://i.imgur.com/xNWldYu.png'); /* Replace with column image */
+  }
+  
+  .bg-column-right {
+    right: 0;
+    background-image: url('https://i.imgur.com/xNWldYu.png'); /* Replace with column image */
+  }
+  
+  /* Content container */
+  .bg-content {
+    position: relative;
+    z-index: 1;
+  }
+  
+  /* Media queries */
+  @media (min-width: 1200px) {
+    .bg-column {
+      display: block; /* Show columns on larger screens */
+    }
+  }

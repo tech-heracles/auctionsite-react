@@ -1,0 +1,245 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Philosopher:wght@400;700&display=swap');
+
+.olympus-container {
+  position: relative;
+}
+
+/* Header styling with Greek meander pattern */
+.treasury-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+.olympus-title {
+  font-family: 'Cinzel', serif;
+  font-weight: 700;
+  font-size: 2rem;
+  color: #1a3a5f;
+  text-align: center;
+  padding: 0 1.5rem;
+}
+
+.meander-line {
+  height: 5px;
+  flex-grow: 1;
+  max-width: 200px;
+  background-image: url('https://i.imgur.com/HAtLYft.png');
+  background-repeat: repeat-x;
+  background-size: auto 100%;
+}
+
+/* Card styling with Greek elements */
+.auction-card {
+  position: relative;
+  border: 1px solid #e0d7c1;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: all 0.3s;
+  background: linear-gradient(to bottom, #f5f0e3, #fff);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.auction-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+  border-color: #d4b662;
+}
+
+/* Column design at the top */
+.auction-card::before,
+.auction-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  height: 8px;
+  background-image: url('https://i.imgur.com/HAtLYft.png');
+  background-repeat: repeat-x;
+  background-size: auto 100%;
+  width: 100%;
+}
+
+.auction-header {
+  padding: 1rem;
+  background: linear-gradient(to right, rgba(26, 58, 95, 0.8), rgba(26, 58, 95, 0.9));
+  text-align: center;
+}
+
+.auction-title {
+  margin: 0;
+  color: #f5d782;
+  font-family: 'Cinzel', serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.auction-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.5rem;
+  padding: 1rem 0;
+  background: linear-gradient(to bottom, rgba(245, 215, 130, 0.3), rgba(245, 215, 130, 0.1));
+}
+
+.auction-content {
+  padding: 1.25rem;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.auction-detail {
+  margin-bottom: 0.75rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px dashed rgba(26, 58, 95, 0.2);
+  padding-bottom: 0.5rem;
+}
+
+.detail-label {
+  font-family: 'Philosopher', sans-serif;
+  font-weight: 700;
+  color: #1a3a5f;
+}
+
+.detail-value {
+  font-family: 'Philosopher', sans-serif;
+  color: #333;
+}
+
+.time-remaining {
+  color: #8b0000;
+  font-weight: 700;
+}
+
+/* Greek-styled button */
+.olympus-button {
+  margin-top: auto;
+  display: block;
+  background: linear-gradient(to right, #d4b662, #f5d782);
+  color: #1a3a5f;
+  text-align: center;
+  text-decoration: none;
+  padding: 0.75rem 1rem;
+  border-radius: 4px;
+  font-family: 'Cinzel', serif;
+  font-weight: 700;
+  transition: all 0.3s;
+  border: 1px solid #d4b662;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+}
+
+.olympus-button:hover {
+  background: linear-gradient(to right, #c9a43e, #e2c75f);
+  color: #1a3a5f;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* Loading state styling */
+.olympus-loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem;
+  text-align: center;
+}
+
+.loading-column {
+  width: 40px;
+  height: 100px;
+  background-image: url('https://i.imgur.com/xNWldYu.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  animation: pulse 1.5s infinite alternate;
+  margin-bottom: 1rem;
+}
+
+@keyframes pulse {
+  from {
+    opacity: 0.6;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+}
+
+.loading-text {
+  font-family: 'Cinzel', serif;
+  font-size: 1.2rem;
+  color: #1a3a5f;
+  max-width: 250px;
+}
+
+/* Error state styling */
+.olympus-error {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem;
+  text-align: center;
+}
+
+.error-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  animation: shake 0.5s infinite;
+}
+
+@keyframes shake {
+  0% { transform: rotate(0deg); }
+  25% { transform: rotate(5deg); }
+  50% { transform: rotate(0deg); }
+  75% { transform: rotate(-5deg); }
+  100% { transform: rotate(0deg); }
+}
+
+.error-text {
+  font-family: 'Cinzel', serif;
+  font-size: 1.2rem;
+  color: #8b0000;
+  max-width: 300px;
+}
+
+/* Empty state styling */
+.empty-treasury {
+  text-align: center;
+  padding: 3rem 1rem;
+  background: rgba(245, 240, 227, 0.5);
+  border-radius: 8px;
+  border: 1px dashed #d4b662;
+}
+
+.empty-icon {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+}
+
+.empty-text {
+  font-family: 'Cinzel', serif;
+  font-size: 1.5rem;
+  color: #1a3a5f;
+  margin-bottom: 0.5rem;
+}
+
+.empty-subtext {
+  font-family: 'Philosopher', sans-serif;
+  color: #666;
+  max-width: 500px;
+  margin: 0 auto;
+}

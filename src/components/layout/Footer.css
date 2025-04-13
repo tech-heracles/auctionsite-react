@@ -1,0 +1,187 @@
+/* src/components/layout/Footer.css */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap');
+
+.greek-footer {
+  margin-top: 3rem;
+  position: relative;
+}
+
+/* Greek meander pattern for top border */
+.greek-meander-top {
+  height: 5px;
+  width: 100%;
+  background-image: url('https://i.imgur.com/HAtLYft.png');
+  background-repeat: repeat-x;
+  background-size: auto 100%;
+}
+
+/* Main footer styling with Greek temple background */
+.footer-main {
+  background: linear-gradient(rgba(26, 58, 95, 0.9), rgba(26, 58, 95, 0.95)), 
+              url('https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Raffaello%2C_concilio_degli_dei_02.jpg/800px-Raffaello%2C_concilio_degli_dei_02.jpg'); /* Replace with Greek temple background */
+  background-size: cover;
+  background-position: center;
+  color: #fff;
+  padding: 3rem 0;
+  position: relative;
+}
+
+/* Adding subtle column background to the sides */
+.footer-main::before,
+.footer-main::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  width: 30px;
+  height: 100%;
+  opacity: 0.2;
+  background-size: contain;
+  background-repeat: repeat-y;
+  display: none; /* Hide on mobile */
+}
+
+.footer-main::before {
+  left: 0;
+  background-image: url('https://i.imgur.com/xNWldYu.png'); /* Replace with column image */
+}
+
+.footer-main::after {
+  right: 0;
+  background-image: url('https://i.imgur.com/xNWldYu.png'); /* Replace with column image */
+}
+
+/* Footer column styling */
+.footer-column {
+  margin-bottom: 2rem;
+}
+
+/* Heading styling with Greek-inspired underline */
+.footer-heading {
+  font-family: 'Cinzel', serif;
+  color: #f5d782; /* Gold color */
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.5rem;
+  position: relative;
+  display: inline-block;
+}
+
+.footer-heading::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #f5d782;
+}
+
+/* Footer text styling */
+.footer-text {
+  color: #ccd6f6;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+/* Social media icons */
+.footer-social {
+  display: flex;
+  gap: 15px;
+}
+
+.social-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  transition: all 0.3s;
+}
+
+.social-icon:hover {
+  background-color: #f5d782;
+  color: #1a3a5f;
+  transform: translateY(-3px);
+}
+
+/* Footer links */
+.footer-links {
+  list-style: none;
+  padding-left: 0;
+}
+
+.footer-links li {
+  margin-bottom: 10px;
+}
+
+.footer-links a {
+  color: #ccd6f6;
+  text-decoration: none;
+  transition: color 0.3s;
+  position: relative;
+  padding-left: 15px;
+}
+
+.footer-links a:before {
+  content: '➢';
+  position: absolute;
+  left: 0;
+  color: #f5d782;
+}
+
+.footer-links a:hover {
+  color: #f5d782;
+  text-decoration: none;
+}
+
+/* Newsletter styling */
+.footer-newsletter {
+  display: flex;
+  margin-top: 1rem;
+}
+
+.newsletter-input {
+  flex: 1;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 4px 0 0 4px;
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+.newsletter-button {
+  padding: 0.5rem 1rem;
+  background-color: #f5d782;
+  color: #1a3a5f;
+  border: none;
+  border-radius: 0 4px 4px 0;
+  font-family: 'Cinzel', serif;
+  font-weight: 600;
+  transition: all 0.3s;
+}
+
+.newsletter-button:hover {
+  background-color: #e9c655;
+}
+
+/* Copyright section */
+.footer-bottom {
+  background-color: #152c47;
+  padding: 1.5rem 0;
+  text-align: center;
+}
+
+.copyright-text {
+  color: #8ba1c5;
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+/* Media queries */
+@media (min-width: 992px) {
+  .footer-main::before,
+  .footer-main::after {
+    display: block;
+  }
+}
